@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    background: transparent;
+}
+
+/* PURE CSS LIQUID GLASS STYLES - 100% EFFICIENT */
+.css-liquidGlass-wrapper {
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.css-liquidGlass-effect {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    filter: url(#css-glass-distortion);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.css-liquidGlass-tint {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.css-liquidGlass-shine {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+        inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.css-liquidGlass-content {
+    z-index: 3;
+    position: relative;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Dock Style */
+.css-dock {
+    border-radius: 2rem;
+    padding: 0.6rem;
+}
+
+.css-dock:hover {
+    padding: 0.8rem;
+    border-radius: 2.5rem;
+}
+
+.css-dock-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.css-icon {
+    font-size: 2.5rem;
+    padding: 0.2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.css-icon:hover {
+    transform: scale(0.95);
+}
+
+/* Button Style */
+.css-button {
+    padding: 1.5rem 2.5rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+}
+
+.css-button:hover {
+    padding: 1.8rem 2.8rem;
+    border-radius: 4rem;
+}
+
+/* Card Style */
+.css-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    min-width: 200px;
+}
+
+.css-card:hover {
+    padding: 1.8rem;
+    border-radius: 2rem;
+}
+
+/* Single Icon Style */
+.css-single-icon {
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-single-icon:hover {
+    padding: 1.2rem;
+    border-radius: 2.5rem;
+}
+
+.css-icon-large {
+    font-size: 3rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.css-icon-large:hover {
+    transform: scale(0.95);
+}
+
+/* LIQUID GLASS STYLES - MOVED TO SEPARATE FILE */
+/* See /src/styles/liquid-glass.css for all liquid glass styles */
+
+/* Original wrapper styles - MOVED TO SEPARATE FILE */
+/* See /src/styles/liquid-glass.css for all glass wrapper styles */
+
+.original-liquid-body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+/* Background animation */
+@keyframes moveBackground {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 0% -1500%;
+    }
+}
+
+/* Original dock styling */
+.dock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 2rem;
+    padding: 0.6rem;
+}
+
+.dock,
+.dock>div {
+    border-radius: 2rem;
+}
+
+.dock:hover {
+    padding: 0.8rem;
+    border-radius: 2.5rem;
+}
+
+.dock:hover>div {
+    border-radius: 2.5rem;
+}
+
+.dock img {
+    width: 75px;
+    padding: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+}
+
+.dock img:hover {
+    transform: scale(0.95);
+    transform-origin: center center;
+}
+
+/* All liquid glass styles moved to /src/styles/liquid-glass.css */
+
+/* Glass button utility for other components */
+.glass-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* In-app notification animation */
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+}
