@@ -1955,9 +1955,9 @@ class MultiSourceLocationCollector:
             
             return tempo_raw_data, tempo_science_data, tempo_sources
         
-        async def get_geos_data():
-            logger.info("🌐 Collecting GEOS-CF chemistry + meteorology data (ASYNC)...")
-            return await self.fetch_geos_cf_data_async(lat, lon)
+       async def get_geos_data():
+            logger.info("🚫 GEOS-CF TEMPORARILY DISABLED - Skipping atmospheric model data collection...")
+            return {}, {}
         
         async def get_ground_data():
             logger.info("🏢 Collecting ground station data from all sources (ASYNC)...")
